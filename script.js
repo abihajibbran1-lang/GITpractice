@@ -8,9 +8,12 @@ navToggle.addEventListener('click', () => {
   navLinks.classList.toggle('active');
 });
 
-// NOTE: clicking a link inside navLinks does not close the menu.
-// Known issue — tracked separately.
-// Contact form (static site — no backend, just a friendly confirmation)
+// Fix (#7): close the mobile menu when a nav link is clicked
+document.querySelectorAll('#navLinks a').forEach((link) => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('active');
+  });
+});
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
   contactForm.addEventListener('submit', (e) => {
