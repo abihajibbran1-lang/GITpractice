@@ -22,3 +22,25 @@ if (contactForm) {
     contactForm.reset();
   });
 }
+// Testimonials carousel
+const track = document.getElementById('testimonialTrack');
+const prevBtn = document.getElementById('prevTestimonial');
+const nextBtn = document.getElementById('nextTestimonial');
+let currentSlide = 0;
+
+function updateCarousel() {
+  const slideCount = track.children.length;
+  currentSlide = (currentSlide + slideCount) % slideCount;
+  track.style.transform = `translateX(-${currentSlide * 100}%)`;
+}
+
+if (track && prevBtn && nextBtn) {
+  prevBtn.addEventListener('click', () => {
+    currentSlide -= 1;
+    updateCarousel();
+  });
+  nextBtn.addEventListener('click', () => {
+    currentSlide += 1;
+    updateCarousel();
+  });
+}
