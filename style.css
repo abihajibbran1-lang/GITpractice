@@ -151,3 +151,9 @@ body {
   font-weight: bold;
   color: var(--color-primary);
 }
+.about {
+  padding: 4rem 1.5rem;
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
