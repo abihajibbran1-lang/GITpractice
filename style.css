@@ -157,3 +157,40 @@ body {
   margin: 0 auto;
   text-align: center;
 }
+.footer {
+  background: var(--color-dark);
+  color: #fff;
+  padding: 4rem 1.5rem 2rem;
+}
+
+.footer-content {
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 0.75rem;
+  border-radius: 4px;
+  border: none;
+  font-family: inherit;
+}
+
+.footer-info p {
+  margin-bottom: 0.25rem;
+  opacity: 0.8;
+}
+
+.footer-copy {
+  margin-top: 2rem;
+  font-size: 0.85rem;
+  opacity: 0.6;
+}
