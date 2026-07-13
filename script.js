@@ -26,15 +26,34 @@ if (contactForm) {
 const track = document.getElementById('testimonialTrack');
 const prevBtn = document.getElementById('prevTestimonial');
 const nextBtn = document.getElementById('nextTestimonial');
+const dotsContainer = document.getElementById('testimonialDots');
 let currentSlide = 0;
+
+function buildDots() {
+  const slideCount = track.children.length;
+  for (let i = 0; i < slideCount; i++) {
+    const dot = document.createElement('button');
+    dot.className = 'dot';
+    dot.addEventListener('click', () => {
+      currentSlide = i;
+      updateCarousel();
+    });
+    dotsContainer.appendChild(dot);
+  }
+}
 
 function updateCarousel() {
   const slideCount = track.children.length;
   currentSlide = (currentSlide + slideCount) % slideCount;
   track.style.transform = `translateX(-${currentSlide * 100}%)`;
+  [...dotsContainer.children].forEach((dot, i) => {
+    dot.classList.toggle('active', i === currentSlide);
+  });
 }
 
-if (track && prevBtn && nextBtn) {
+if (track && prevBtn && nextBtn && dotsContainer) {
+  buildDots();
+  updateCarousel();
   prevBtn.addEventListener('click', () => {
     currentSlide -= 1;
     updateCarousel();

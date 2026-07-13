@@ -250,3 +250,29 @@ body {
   cursor: pointer;
   flex-shrink: 0;
 }
+.testimonial-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ccc;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.dot.active {
+  background: var(--color-primary);
+}
+
+.testimonial-card {
+  min-width: 100%;
+  box-sizing: border-box;
+  transition: opacity 0.3s ease;
+}
